@@ -1,0 +1,9 @@
+{
+  "secure": true,
+  "hostname": "io.comitime.com",
+  "authorization": "hsgtvAJJsYEBDJFjPZb4ZpWm0FPMywiPnRtj6ZOb",
+  "https": {
+    "cert": "fullchain.pem",
+    "key": "privkey.pem"
+  }
+}
