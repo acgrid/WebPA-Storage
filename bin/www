@@ -20,21 +20,20 @@ app.set('port', port);
  * Create HTTP server.
  */
 const https = require('config').get('https');
-let http, options = {};
+let http, server;
 
 if(https){
+  debug('Using HTTPS options', https);
   http = require('https');
-  options = {
+  server = http.createServer({
     key:  fs.readFileSync(path.join(__dirname, '../', https.key)),
     cert: fs.readFileSync(path.join(__dirname, '../', https.cert))
-  };
-  debug('Using HTTPS options', https);
+  }, app)
 }else{
   http = require('http');
   debug('Using HTTP');
+  server = http.createServer(app)
 }
-
-var server = http.createServer(options, app);
 
 /**
  * Listen on provided port, on all network interfaces.
