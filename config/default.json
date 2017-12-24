@@ -5,5 +5,9 @@
   "https": {
     "cert": "fullchain.pem",
     "key": "privkey.pem"
+  },
+  "mongo": {
+    "dsn": "mongodb://localhost:27017/webpa",
+    "db": "webpa"
   }
 }
