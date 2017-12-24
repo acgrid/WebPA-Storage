@@ -3,6 +3,7 @@ var path = require('path');
 var logger = require('morgan');
 var config = require('config');
 var bodyParser = require('body-parser');
+const cors = require('cors');
 
 var app = express();
 
@@ -28,7 +29,7 @@ app.use(function(req, res, next) {
       next();
   }
 });
-app.use('/program', require('./routes/program'));
+app.use('/program', cors(), require('./routes/program'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
